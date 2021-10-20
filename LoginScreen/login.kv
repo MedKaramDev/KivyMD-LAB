@@ -9,8 +9,49 @@ Screen:
         orientation : 'vertical'
 
         MDLabel :
-            id : 'welcome_label'
-            text : 'WELCOME'
+            id : welcome_label
+            text : app.welcome_etat
             halign : 'center'
             font_size : 36
-            
+            #pos_hint_y : None
+            #height : 300
+            size_hint_y : None
+            height : self.texture_size[1]
+            padding_y : 15
+
+        MDTextFieldRound :
+            id : user
+            hint_text : "username"
+            icon_right : "account"
+            size_hint_x : .75
+            #width : 250
+            font_size : 18
+            pos_hint : {'center_x':.5}
+
+        MDTextFieldRound :
+            id : password
+            hint_text : "Password"
+            icon_right : "eye-off"
+            size_hint_x : .75
+            #width : 250
+            font_size : 18
+            pos_hint : {'center_x':.5}
+            password : True
+
+        MDRoundFlatButton :
+            text : "LOG IN"
+            font_size : 12
+            pos_hint : {'center_x': .5}
+            size_hint_x : .4
+            on_press : app.logger()
+
+        MDRoundFlatButton :
+            text : "CLEAR"
+            font_size : 12
+            pos_hint : {'center_x': .5}
+            size_hint_x : .4
+            on_press : app.clear()
+
+        Widget :
+            size_hint_y : None
+            height : 15
